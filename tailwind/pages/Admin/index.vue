@@ -6,7 +6,7 @@ definePageMeta({
 </script>
 
 <template>
-  <div class="bg-slate-400">
+  <div class="bg-red-400">
     This IS ADMIN
   </div>
 </template>

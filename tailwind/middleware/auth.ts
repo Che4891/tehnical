@@ -1,23 +1,12 @@
-export default defineNuxtRouteMiddleware(() => {
+import { getCurrentUserSafe } from '@/lib/helpers'
 
-    if (false === false) {
-      return navigateTo('/login')
-    }
+export default defineNuxtRouteMiddleware(async () => {
+  const store = authStore()
+  const user = await getCurrentUserSafe()
 
-  })
-
-
-
-//   import { useUserStore } from "~/stores/userStore";
-
-// export default defineNuxtRouteMiddleware(async (to, from) => {
-//   const authStore = useUserStore();
-//   if (authStore.user) {
-//     const sessionStatus = await authStore.checkSession(authStore.user.$id);
-//     if (!sessionStatus) {
-//       return navigateTo("/login");
-//     }
-//   } else {
-//     return navigateTo("/login");
-//   }
-// });
+  if (user) {
+    store.set(user)
+  } else {
+    return navigateTo('/login')
+  }
+})

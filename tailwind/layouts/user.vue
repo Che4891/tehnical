@@ -1,6 +1,6 @@
 <template>
   <div>
-    <layoutAppBar><layoutLogOut class="ml-auto" /></layoutAppBar>
+    <layoutAppBar class='bg-red'><layoutLogOut class="ml-auto" /></layoutAppBar>
     <NuxtPage />
   </div>
 </template>
