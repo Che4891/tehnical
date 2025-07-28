@@ -31,7 +31,7 @@ export const authStore = defineStore('auth', {
 
 export const useIsLoading = defineStore('isLoading', {
         state: () => ({
-            isLoading: true,
+            isLoading: false,
         }),
 
         actions: {

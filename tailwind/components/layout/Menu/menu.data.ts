@@ -6,7 +6,7 @@ export interface IMenuItem {
 
 export const MENU_DATA: IMenuItem[] = [
     {
-        icon: 'line-md:home-twotone',
+        icon: 'line-md:home',
         name: 'Home',
         url: '/'
     },

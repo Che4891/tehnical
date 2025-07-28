@@ -19,7 +19,7 @@ export default defineNuxtConfig({
 
   css: ['~/assets/css/tailwind.css'],
 
-  devtools: { enabled: false },
+  devtools: { enabled: true },
   modules: [
     'shadcn-nuxt',
     '@nuxt/icon',
@@ -33,6 +33,10 @@ export default defineNuxtConfig({
       appwriteProjectId: process.env.NUXT_PUBLIC_APPWRITE_PROJECT_ID || '',
       appwriteEndpoint: process.env.NUXT_PUBLIC_APPWRITE_ENDPOINT || ''
     }
+  },
+
+  routeRules: {
+    '/**': { ssr: true },
   },
 
   vite: {

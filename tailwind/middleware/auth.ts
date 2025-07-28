@@ -1,12 +1,9 @@
-import { getCurrentUserSafe } from '@/lib/helpers'
-
 export default defineNuxtRouteMiddleware(async () => {
-  const store = authStore()
-  const user = await getCurrentUserSafe()
+    const loading = useIsLoading()
 
-  if (user) {
-    store.set(user)
-  } else {
-    return navigateTo('/login')
-  }
+    console.log('first step', loading.isLoading)
+
+    loading.set(true)
+
+    console.log('second step', loading.isLoading)
 })
