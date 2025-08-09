@@ -31,7 +31,8 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       appwriteProjectId: process.env.NUXT_PUBLIC_APPWRITE_PROJECT_ID || '',
-      appwriteEndpoint: process.env.NUXT_PUBLIC_APPWRITE_ENDPOINT || ''
+      appwriteEndpoint: process.env.NUXT_PUBLIC_APPWRITE_ENDPOINT || '',
+      usersObjectKey: process.env.NUXT_USERS || '',
     }
   },
 
