@@ -1,43 +1,43 @@
-interface IAuthStore {
-    email: string
-    name: string
-    status: boolean
-}
-
-const defaultValue: {user: IAuthStore} = {
-    user: {
-        email: "",
-        name: "",
-        status: false
-    }
-}
-
-export const authStore = defineStore('auth', {
-    state: () => defaultValue,
-
-    getters: {
-        isAuth: state => state.user.status,
-    },
-
-    actions: {
-        clear() {
-            this.$patch(defaultValue)
-        },
-        set(input: IAuthStore) {
-            this.$patch({user: input})
-        }
-    }
-})
-
-export const useIsLoading = defineStore('isLoading', {
-        state: () => ({
-            isLoading: true,
-        }),
-
-        actions: {
-            set(data: boolean) {
-                this.$patch({isLoading: data})
-            }
-        }
-    }
-)
+// interface IAuthStore {
+//     email: string
+//     name: string
+//     status: boolean
+// }
+//
+// const defaultValue: {user: IAuthStore} = {
+//     user: {
+//         email: "",
+//         name: "",
+//         status: false
+//     }
+// }
+//
+// export const authStore = defineStore('auth', {
+//     state: () => defaultValue,
+//
+//     getters: {
+//         isAuth: state => state.user.status,
+//     },
+//
+//     actions: {
+//         clear() {
+//             this.$patch(defaultValue)
+//         },
+//         set(input: IAuthStore) {
+//             this.$patch({user: input})
+//         }
+//     }
+// })
+//
+// export const useIsLoading = defineStore('isLoading', {
+//         state: () => ({
+//             isLoading: false,
+//         }),
+//
+//         actions: {
+//             set(data: boolean) {
+//                 this.$patch({isLoading: data})
+//             }
+//         }
+//     }
+// )

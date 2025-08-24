@@ -1,12 +1,13 @@
-import { getCurrentUserSafe } from '@/lib/helpers'
+export default defineNuxtRouteMiddleware((to) => {
+    const auth = useAuthStore()
 
-export default defineNuxtRouteMiddleware(async () => {
-  const store = authStore()
-  const user = await getCurrentUserSafe()
+    console.log('MIDELWAER', auth.isAuthenticated)
 
-  if (user) {
-    store.set(user)
-  } else {
-    return navigateTo('/login')
-  }
+    if (!auth.isAuthenticated && to.path !== '/login') {
+        return navigateTo('/login')
+    }
+
+    if (auth.isAuthenticated && to.path === '/login') {
+        return navigateTo('/admin')
+    }
 })

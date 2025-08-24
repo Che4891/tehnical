@@ -4,8 +4,6 @@ export const client = new Client();
 
 const config = useRuntimeConfig()
 
-console.log('Appwrite Config:', config.public)
-
 const appWriteID: string = config.public.appwriteProjectId
 const appWriteUrl: string = config.public.appwriteEndpoint
 
