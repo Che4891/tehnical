@@ -1,9 +1,13 @@
-export default defineNuxtRouteMiddleware(async () => {
-    const loading = useIsLoading()
+export default defineNuxtRouteMiddleware((to) => {
+    const auth = useAuthStore()
 
-    console.log('first step', loading.isLoading)
+    console.log('MIDELWAER', auth.isAuthenticated)
 
-    loading.set(true)
+    if (!auth.isAuthenticated && to.path !== '/login') {
+        return navigateTo('/login')
+    }
 
-    console.log('second step', loading.isLoading)
+    if (auth.isAuthenticated && to.path === '/login') {
+        return navigateTo('/admin')
+    }
 })

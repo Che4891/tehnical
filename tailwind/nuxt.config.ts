@@ -33,6 +33,8 @@ export default defineNuxtConfig({
       appwriteProjectId: process.env.NUXT_PUBLIC_APPWRITE_PROJECT_ID || '',
       appwriteEndpoint: process.env.NUXT_PUBLIC_APPWRITE_ENDPOINT || '',
       usersObjectKey: process.env.NUXT_USERS || '',
+      apiUrl: process.env.NUXT_API_URL,
+      apiKey: process.env.NUXT_API_KEY,
     }
   },
 

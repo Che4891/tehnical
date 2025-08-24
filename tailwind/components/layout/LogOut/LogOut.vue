@@ -1,10 +1,14 @@
 <script setup>
-    
+const auth = useAuthStore()
+const logOut = () => {
+  auth.logout()
+  return navigateTo('/login')
+}
 </script>
 
 <template>
     <div>
-        <Icon name="line-md:log-out">Log-out</Icon>
+        <uiButton @click="logOut"><Icon name="line-md:log-out">Log-out</Icon></uiButton>
     </div>
 </template>
 

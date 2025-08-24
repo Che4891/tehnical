@@ -14,6 +14,12 @@ const customer = reactive({
   owner: "TestOwner",
   people: 10,
 });
+const mySlides = [
+  { image: "https://armyinform.com.ua/wp-content/uploads/2025/06/photo_5411500725734864674_y.jpg", name: "Slide 1" },
+  { image: "https://nmcpto.poltava.ua/wp-content/uploads/2023/10/taktychna-medytsyna.jpg", name: "Slide 2" },
+  { image: "https://armyinform.com.ua/wp-content/uploads/2022/06/photo1655614952-1.jpeg", name: "Slide 3" },
+  { image: "https://images.unian.net/photos/2025_08/1754135373-3454.jpg?r=878772", name: "Slide 4" }
+];
 const emit = defineEmits(['isEmit']);
 
 // const dublVersion = computed<number>(() => {
@@ -102,9 +108,23 @@ function onClick(val: string) {
   <div>
     TEST SWIPER TS
 
-    <uiSwiper>
+    <uiSwiper :slides="mySlides"
+              :slides-per-view="1"
+              :space-between="100"
+              :pagination="true"
+              :loop="true">
 
     </uiSwiper>
+  </div>
+  <div>
+    TEST EDITOR TIPTAP
+    <uiEditor> </uiEditor>
+  </div>
+  <br>
+  <div>
+    FILE INPUT
+
+    <uiInput  type="file" accept="image/*"/>
   </div>
 </template>
 
